@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class spawnLine : MonoBehaviour {
 	public GameObject[] blocks, opr1, opr2;
@@ -96,8 +97,8 @@ public class spawnLine : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.R)) {
-			Application.LoadLevel(0);
-		}
+            SceneManager.LoadScene(0);
+        }
 
 		if (Input.GetMouseButtonDown (0)) {
 			//Debug.Log ("Clicked");

@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class spawnbox : MonoBehaviour {
 
 	//public void plusPlus(int Val1, int Val2, int Val3, int oper1, int oper2, int x);
 	public GameObject[] blocks;
 	public GameObject[] oprator;
-	public bool plus, minus, multi, divid;
+	public bool plus, minus, multi, divid, test;
 	private GameObject spawnBlock, spawnBlock2, spawnBlock3, spawnBlock4, spawnBlock5, spawnBlock6, spawnBlock7, spawnBlock8;
 	private Vector2 spawnSpot1 = new Vector2(-5.4f,5.4f);
 	private Vector2 spawnSpot2 = new Vector2(-2.7f,5.4f);
@@ -105,9 +106,47 @@ public class spawnbox : MonoBehaviour {
 				}
 			}
 		}
-		//else if(plus && !minus && multi && !divid)
+		else if(plus && !minus && multi && !divid){
+            for (int y = 0; y < 4; y++){
+                if (y == 0){
+                    plusM(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                }
+                else if (y == 1){
+                    plusM(ref ran3, ref ran4, ref ran5, ref oprArr3, ref oprArr4, ref y);
+                }
+                else if (y == 2){
+                    plusM(ref ran1, ref ran8, ref ran7, ref oprArr8, ref oprArr7, ref y);
+                }
+                else if (y == 3){
+                    plusM(ref ran7, ref ran6, ref ran5, ref oprArr6, ref oprArr5, ref y);
+                }
+            }
+        }
+        else if (!plus && !minus && !multi && !divid && test)
+        {
+            for (int y = 0; y < 4; y++)
+            {
+                if (y == 0)
+                {
+                    multP(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                }
+                else if (y == 1)
+                {
+                    multP(ref ran3, ref ran4, ref ran5, ref oprArr3, ref oprArr4, ref y);
+                }
+                else if (y == 2)
+                {
+                    multP(ref ran1, ref ran8, ref ran7, ref oprArr8, ref oprArr7, ref y);
+                }
+                else if (y == 3)
+                {
+                    multP(ref ran7, ref ran6, ref ran5, ref oprArr6, ref oprArr5, ref y);
+                }
+            }
+        }
 
-		clickable = new bool[8]; 
+
+        clickable = new bool[8]; 
 		win = new bool[8]; 
 		removeNums ();
 
@@ -154,7 +193,7 @@ public class spawnbox : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.R)) {
-			Application.LoadLevel(0);
+            SceneManager.LoadScene(0);
 		}
 		
 		if (Input.GetMouseButtonDown (0)) {
@@ -297,7 +336,7 @@ public class spawnbox : MonoBehaviour {
 		}
 	}
 
-	public void plusP(ref int Val1, ref int Val2, ref int Val3, ref int oper1, ref int oper2, ref int x){
+	public void plusP(ref int Val1, ref int Val2, ref int Val3, ref int oper1, ref int oper2, ref int x){//done
 		oper1 = 0;
 		oper2 = 0;
 		
@@ -332,10 +371,10 @@ public class spawnbox : MonoBehaviour {
 			Val2 = 10 - (Val1 - Val3);
 		}
 	}
-/*
+
 	public void plusM(ref int Val1, ref int Val2, ref int Val3, ref int oper1, ref int oper2, ref int x){// done
 		oper1 = 0;
-		oper2 = 3;
+		oper2 = 2;
 		int temp;
 		//cout << "x = " << x << endl;
 		
@@ -351,8 +390,8 @@ public class spawnbox : MonoBehaviour {
 		}
 		else{
 			if(Val1 == 0)
-				Val1 = (rand() % 9) + 1;
-			temp = rand() % 3;
+				Val1 = Random.Range(1, 9);
+			temp = Random.Range(0,2);
 			if(Val1 == 1 && temp == 0){
 				Val2 = 1;
 				Val3 = 5;
@@ -367,10 +406,10 @@ public class spawnbox : MonoBehaviour {
 			}
 		}
 	}
-	*/
-	/*void plusD(ref int Val1, ref int Val2, ref int Val3, ref int oper1, ref int oper2, ref int x){// done need to test
-		oper1 = '+';
-		oper2 = '/';
+	
+	void plusD(ref int Val1, ref int Val2, ref int Val3, ref int oper1, ref int oper2, ref int x){// done need to test
+		oper1 = 0;
+		oper2 = 3;
 		if(x == 3){
 			if(Val3 != 1)
 				x = x - 3;
@@ -379,11 +418,11 @@ public class spawnbox : MonoBehaviour {
 		}
 		else{
 			if(Val1 == 0)
-				Val1 = (rand() % 9) + 1;
+				Val1 = Random.Range(1,9);
 			Val2 = 10 - Val1;
 			Val3 = 1;
 		}
-	}*/
+	}
 	
 	public void subP(ref int Val1,ref int Val2,ref int Val3,ref int oper1,ref int oper2,ref int x){// done
 		oper1 = 1;
@@ -404,9 +443,9 @@ public class spawnbox : MonoBehaviour {
 		}
 	}
 	
-	/*void subM(ref int Val1, ref int Val2, ref int Val3, ref int oper1, ref int oper2, ref int x){// done need to test
-		oper1 = '-';
-		oper2 = '*';
+	void subM(ref int Val1, ref int Val2, ref int Val3, ref int oper1, ref int oper2, ref int x){// done need to test
+		oper1 = 1;
+		oper2 = 2;
 		int temp;
 		
 		if(x == 3){
@@ -424,8 +463,8 @@ public class spawnbox : MonoBehaviour {
 		}
 		else{
 			if(Val1 == 0)
-				Val1 = rand() % 7 + 3;
-			temp = rand() % 2;
+				Val1 = Random.Range(3, 9);
+			temp = Random.Range(0, 2);
 			
 			if(temp == 0 && Val1 > 5){
 				Val2 = Val1 - 5;
@@ -439,9 +478,9 @@ public class spawnbox : MonoBehaviour {
 	}
 	
 	void multP(ref int Val1, ref int Val2, ref int Val3, ref int oper1, ref int oper2, ref int x){// done need to test
-		oper1 = '*';
-		oper2 = '+';
-		int temp, temp2;
+		oper1 = 2;
+		oper2 = 0;
+		//int temp, temp2;
 		
 		if(x == 3){
 			if(Val1 == 1)
@@ -473,22 +512,22 @@ public class spawnbox : MonoBehaviour {
 		}
 		else{
 			if(Val1 == 0)
-				Val1 = ((rand() % 9) + 1);
+				Val1 = Random.Range(1, 10);
 			
 			if(Val1 == 1){
-				Val2 = ((rand() % 9) + 1);
+				Val2 = Random.Range(1, 10);
 				Val3 = 10 - Val2;
 			}
 			else if(Val1 == 2){
-				Val2 = ((rand() % 4) + 1);
+				Val2 = Random.Range(1, 5);
 				Val3 = 10 - (Val1 * Val2);
 			}
 			else if(Val1 == 3){
-				Val2 = ((rand() % 3) +1);
+				Val2 = Random.Range(1, 4);
 				Val3 = 10 - (Val1 * Val2);
 			}
 			else if(Val1 == 4){
-				Val2 = ((rand() % 2) +1);
+				Val2 = Random.Range(1, 3);
 				Val3 = 10 - (Val1 * Val2);
 			}
 			else{
@@ -497,7 +536,7 @@ public class spawnbox : MonoBehaviour {
 			}
 		}
 	}
-	
+	/*
 	void multS(ref int Val1, ref int Val2, ref int Val3, ref int oper1, ref int oper2, ref int x){// done need to test
 		oper1 = '*';
 		oper2 = '-';
