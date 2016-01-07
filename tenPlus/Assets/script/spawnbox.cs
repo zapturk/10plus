@@ -128,19 +128,19 @@ public class spawnbox : MonoBehaviour {
             {
                 if (y == 0)
                 {
-                    multP(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                    multS(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
                 }
                 else if (y == 1)
                 {
-                    multP(ref ran3, ref ran4, ref ran5, ref oprArr3, ref oprArr4, ref y);
+                    multS(ref ran3, ref ran4, ref ran5, ref oprArr3, ref oprArr4, ref y);
                 }
                 else if (y == 2)
                 {
-                    multP(ref ran1, ref ran8, ref ran7, ref oprArr8, ref oprArr7, ref y);
+                    multS(ref ran1, ref ran8, ref ran7, ref oprArr8, ref oprArr7, ref y);
                 }
                 else if (y == 3)
                 {
-                    multP(ref ran7, ref ran6, ref ran5, ref oprArr6, ref oprArr5, ref y);
+                    multS(ref ran7, ref ran6, ref ran5, ref oprArr6, ref oprArr5, ref y);
                 }
             }
         }
@@ -193,6 +193,7 @@ public class spawnbox : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.R)) {
+            Debug.Log("<-------Reset------->");
             SceneManager.LoadScene(0);
 		}
 		
@@ -328,7 +329,7 @@ public class spawnbox : MonoBehaviour {
 		}
 		
 		if(win[0] && win[1] && win[2] && win[3] && win[4] && win[5] && win[6] && win[7]){
-			Debug.Log( "Winner" );
+			Debug.Log( "<---------Winner---------->" );
 			win[0] = false;
 			for(int v = 0; v < 8; v++){
 				clickable[v] = false;
@@ -376,7 +377,6 @@ public class spawnbox : MonoBehaviour {
 		oper1 = 0;
 		oper2 = 2;
 		int temp;
-		//cout << "x = " << x << endl;
 		
 		if(x == 3){
 			if(Val1 == 5 && Val3 != 1)
@@ -480,7 +480,6 @@ public class spawnbox : MonoBehaviour {
 	void multP(ref int Val1, ref int Val2, ref int Val3, ref int oper1, ref int oper2, ref int x){// done need to test
 		oper1 = 2;
 		oper2 = 0;
-		//int temp, temp2;
 		
 		if(x == 3){
 			if(Val1 == 1)
@@ -536,10 +535,10 @@ public class spawnbox : MonoBehaviour {
 			}
 		}
 	}
-	/*
-	void multS(ref int Val1, ref int Val2, ref int Val3, ref int oper1, ref int oper2, ref int x){// done need to test
-		oper1 = '*';
-		oper2 = '-';
+	
+	void multS(ref int Val1, ref int Val2, ref int Val3, ref int oper1, ref int oper2, ref int x){
+		oper1 = 2;
+		oper2 = 1;
 		
 		if(x == 3){
 			if(Val1 == 1)
@@ -555,33 +554,35 @@ public class spawnbox : MonoBehaviour {
 						Val2 = 5;
 					else if(Val3 == 8)
 						Val2 = 6;
-				}
+                    else
+                        x = x - 3;
+                }
 				else if(Val1 == 4){
 					if(Val3 == 2)
 						Val2 = 3;
 					else if(Val3 == 6)
 						Val2 = 3;
-				}
-				else if(Val1 == 5){
-					if(Val3 = 5)
+                    else
+                        x = x - 3;
+                }
+				else if(Val1 == 5 && Val3 == 5){
 						Val2 = 3;
 				}
 				else if(Val1 == 6){
-					if(Val3 == 2)
-						Val2 = 2;
-					else if(Val3 == 8)
-						Val2 = 3;
+                    if (Val3 == 2)
+                        Val2 = 2;
+                    else if (Val3 == 8)
+                        Val2 = 3;
+                    else
+                        x = x - 3;
 				}
-				else if(Val1 == 7){
-					if(Val3 = 4)
-						Val2 = 2;
-				}
-				else if(Val1 == 8){
-					if(Val3 = 6)
+				else if(Val1 == 7 && Val3 == 4){
 						Val2 = 2;
 				}
-				else if(Val1 == 9){
-					if(Val3 = 8)
+				else if(Val1 == 8 && Val3 == 6){
+						Val2 = 2;
+				}
+				else if(Val1 == 9 && Val3 == 8){
 						Val2 = 2;
 				}
 				else
@@ -591,18 +592,18 @@ public class spawnbox : MonoBehaviour {
 		}
 		else{
 			if(Val1 == 0)
-				Val1 = ((rand() % 8) + 2);
+				Val1 = Random.Range(2,10);
 			
 			if(Val1 == 2){
-				Val2 = ((rand() % 4) + 6);
+				Val2 = Random.Range(6,10);
 				Val3 = (Val1 * Val2) - 10;
 			}
 			else if(Val1 == 3){
-				Val2 = ((rand() % 3) + 4);
+				Val2 = Random.Range(4,7);
 				Val3 = (Val1 * Val2) - 10;
 			}
 			else if(Val1 == 4){
-				Val2 = ((rand() % 2) + 3);
+				Val2 = Random.Range(3,5);
 				Val3 = (Val1 * Val2) - 10;
 			}
 			else if(Val1 == 5){
@@ -610,7 +611,7 @@ public class spawnbox : MonoBehaviour {
 				Val3 = 5;
 			}
 			else if(Val1 == 6){
-				Val2 = ((rand() % 2) + 2);
+				Val2 = Random.Range(2,4);
 				Val3 = (Val1 * Val2) - 10;
 			}
 			else{
@@ -619,7 +620,7 @@ public class spawnbox : MonoBehaviour {
 			}
 		}
 	}
-	
+    /*
 	void multM(ref int Val1, ref int Val2, ref int Val3, ref int oper1, ref int oper2, ref int x){// done
 		int Temp = -1;
 		oper1 = '*';
@@ -777,7 +778,7 @@ public class spawnbox : MonoBehaviour {
 		}
 	}*/
 
-	public void removeNums(){
+    public void removeNums(){
 		removeNum = Random.Range (1, 17);
 		switch (removeNum) {
 			
