@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/levels/Box.unity
+- path: Assets/levels/logo.unity
   isLoaded: 1
   isActive: 1

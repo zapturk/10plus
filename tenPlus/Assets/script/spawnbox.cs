@@ -291,10 +291,15 @@ public class spawnbox : MonoBehaviour {
                     if (hitInfo.transform.gameObject.tag == "test")
                     {
                         Debug.Log("<-------Reset------->");
-                        SceneManager.LoadScene(0);
+                        SceneManager.LoadScene("Box");
                     }
+                if (hitInfo.transform.gameObject.tag == "reset")
+                {
+                    Debug.Log("<-------logo------->");
+                    SceneManager.LoadScene("logo");
+                }
 
-                    if (hitInfo.transform.gameObject.tag == "num1" && clickable[0])
+                if (hitInfo.transform.gameObject.tag == "num1" && clickable[0])
                     {
                         Destroy(spawnBlock);
                         if (blockArr == 9)
