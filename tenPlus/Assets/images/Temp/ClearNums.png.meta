@@ -1,0 +1,261 @@
+fileFormatVersion: 2
+guid: 1ff896f76a1df424c8b03ea7d575216e
+timeCreated: 1468001834
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ClearNums_0
+    21300002: ClearNums_1
+    21300004: ClearNums_2
+    21300006: ClearNums_3
+    21300008: ClearNums_4
+    21300010: ClearNums_5
+    21300012: ClearNums_6
+    21300014: ClearNums_7
+    21300016: ClearNums_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: ClearNums_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 32
+        width: 95
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47.5, y: 47.5}
+        - {x: -47.5, y: -47.5}
+        - {x: 47.5, y: -47.5}
+        - {x: 47.5, y: -44.5}
+        - {x: -44.5, y: 47.5}
+      - - {x: -18.5, y: -0.5}
+        - {x: -18.5, y: -22.5}
+        - {x: -11.5, y: -26.5}
+        - {x: 8.5, y: -26.5}
+        - {x: 15.5, y: -22.5}
+        - {x: 15.5, y: 21.5}
+        - {x: 4.5, y: 36.5}
+        - {x: -13.5, y: 36.5}
+        - {x: -15.5, y: 27.5}
+        - {x: -15.5, y: 24.5}
+    - name: ClearNums_1
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 133
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 35}
+        - {x: -23, y: -27}
+        - {x: 19, y: -27}
+        - {x: 22, y: -23}
+        - {x: 22, y: 35}
+    - name: ClearNums_2
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 135
+        width: 94
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 36.5}
+        - {x: -23, y: 15.5}
+        - {x: -11, y: -6.5}
+        - {x: -3, y: -11.5}
+        - {x: -23, y: -19.5}
+        - {x: -23, y: -33.5}
+        - {x: -21, y: -36.5}
+        - {x: 19, y: -36.5}
+        - {x: 22, y: -34.5}
+        - {x: 22, y: 22.5}
+        - {x: 15, y: 36.5}
+    - name: ClearNums_3
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 134
+        width: 94
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 27}
+        - {x: -2, y: 20}
+        - {x: -12, y: 35}
+        - {x: -20, y: 35}
+        - {x: -28, y: 29}
+        - {x: -28, y: -3}
+        - {x: -2, y: -28}
+        - {x: 11, y: -28}
+        - {x: 13, y: -26}
+        - {x: 24, y: -5}
+        - {x: 24, y: 12}
+        - {x: 7, y: 28}
+    - name: ClearNums_4
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 134
+        width: 94
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9, y: 8.5}
+        - {x: 4, y: 10.5}
+        - {x: 14, y: 19.5}
+        - {x: 19, y: 27.5}
+        - {x: 14, y: 32.5}
+        - {x: -18, y: 32.5}
+        - {x: -27, y: 21.5}
+        - {x: -26, y: -2.5}
+        - {x: -21, y: -4.5}
+        - {x: 1, y: -4.5}
+        - {x: -25, y: -12.5}
+        - {x: -28, y: -18.5}
+        - {x: -28, y: -24.5}
+        - {x: -22, y: -29.5}
+        - {x: -9, y: -31.5}
+        - {x: 12, y: -31.5}
+        - {x: 24, y: -18.5}
+        - {x: 24, y: -9.5}
+        - {x: 18, y: 3.5}
+    - name: ClearNums_5
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 233
+        width: 94
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 33.5}
+        - {x: -22, y: 24.5}
+        - {x: -26, y: 13.5}
+        - {x: -26, y: -17.5}
+        - {x: -16, y: -31.5}
+        - {x: 14, y: -31.5}
+        - {x: 25, y: -26.5}
+        - {x: 25, y: 33.5}
+    - name: ClearNums_6
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 233
+        width: 93
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 36.5}
+        - {x: -21.5, y: 29.5}
+        - {x: -21.5, y: 25.5}
+        - {x: -16.5, y: 21.5}
+        - {x: -3.5, y: -30.5}
+        - {x: 8.5, y: -30.5}
+        - {x: 23.5, y: 7.5}
+        - {x: 23.5, y: 34.5}
+        - {x: 15.5, y: 36.5}
+    - name: ClearNums_7
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 233
+        width: 94
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 35.5}
+        - {x: -22, y: 28.5}
+        - {x: -22, y: -25.5}
+        - {x: -13, y: -35.5}
+        - {x: 12, y: -35.5}
+        - {x: 16, y: -33.5}
+        - {x: 21, y: -19.5}
+        - {x: 21, y: 19.5}
+        - {x: 2, y: 35.5}
+    - name: ClearNums_8
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 234
+        width: 93
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 34.5}
+        - {x: -29.5, y: 30.5}
+        - {x: -29.5, y: -10.5}
+        - {x: -1.5, y: -35.5}
+        - {x: 15.5, y: -35.5}
+        - {x: 18.5, y: -30.5}
+        - {x: 18.5, y: 20.5}
+        - {x: 12.5, y: 34.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
