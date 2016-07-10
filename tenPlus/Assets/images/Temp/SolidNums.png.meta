@@ -1,10 +1,18 @@
 fileFormatVersion: 2
 guid: e65163f597a32fd49945d87748542d61
-timeCreated: 1467999992
+timeCreated: 1468170772
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: SolidNums_0
+    21300002: SolidNums_1
+    21300004: SolidNums_2
+    21300006: SolidNums_3
+    21300008: SolidNums_4
+    21300010: SolidNums_5
+    21300012: SolidNums_6
+    21300014: SolidNums_7
+    21300016: SolidNums_8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -54,18 +62,138 @@ TextureImporter:
     - name: SolidNums_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 457
-        height: 339
+        x: 16
+        y: 33
+        width: 94
+        height: 94
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 14, y: 36, z: 348, w: 212}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -228.5, y: 169.5}
-        - {x: -228.5, y: -169.5}
-        - {x: 228.5, y: -169.5}
-        - {x: 228.5, y: 169.5}
+      - - {x: -47, y: 47}
+        - {x: -47, y: -47}
+        - {x: 47, y: -47}
+        - {x: 47, y: 47}
+    - name: SolidNums_1
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 133
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47, y: 47}
+        - {x: -47, y: -47}
+        - {x: 47, y: -47}
+        - {x: 47, y: 47}
+    - name: SolidNums_2
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 134
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47, y: 47}
+        - {x: -47, y: -47}
+        - {x: 47, y: -47}
+        - {x: 47, y: 47}
+    - name: SolidNums_3
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 133
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47, y: 47}
+        - {x: -47, y: -47}
+        - {x: 47, y: -47}
+        - {x: 47, y: 47}
+    - name: SolidNums_4
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 133
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47, y: 47}
+        - {x: -47, y: -47}
+        - {x: 47, y: -47}
+        - {x: 47, y: 47}
+    - name: SolidNums_5
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 233
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47, y: 47}
+        - {x: -47, y: -47}
+        - {x: 47, y: -47}
+        - {x: 47, y: 47}
+    - name: SolidNums_6
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 233
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47, y: 47}
+        - {x: -47, y: -47}
+        - {x: 47, y: -47}
+        - {x: 47, y: 47}
+    - name: SolidNums_7
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 233
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47, y: 47}
+        - {x: -47, y: -47}
+        - {x: 47, y: -47}
+        - {x: 47, y: 47}
+    - name: SolidNums_8
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 233
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47, y: 47}
+        - {x: -47, y: -47}
+        - {x: 47, y: -47}
+        - {x: 47, y: 47}
     outline: []
   spritePackingTag: 
   userData: 

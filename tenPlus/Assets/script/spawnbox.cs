@@ -6,6 +6,7 @@ public class spawnbox : MonoBehaviour {
 
 	//public void plusPlus(int Val1, int Val2, int Val3, int oper1, int oper2, int x);
 	public GameObject[] blocks;
+    public GameObject[] blocks2;
 	public GameObject[] oprator;
 	public bool plus, minus, multi, divid, test;
 	private GameObject spawnBlock, spawnBlock2, spawnBlock3, spawnBlock4, spawnBlock5, spawnBlock6, spawnBlock7, spawnBlock8;
@@ -221,6 +222,7 @@ public class spawnbox : MonoBehaviour {
 		win = new bool[8]; 
 		removeNums ();
 
+        // log all the values to you konow what they ar
 		Debug.Log (ran1);
 		Debug.Log (ran2);
 		Debug.Log (ran3);
@@ -234,21 +236,22 @@ public class spawnbox : MonoBehaviour {
 			win [x] = !clickable [x];
 		}
 		
-		spawnBlock = (GameObject)Instantiate (blocks [blockArr], spawnSpot1, transform.rotation);
+        // set all the in
+		spawnBlock = (GameObject)Instantiate (blocks2 [blockArr], spawnSpot1, transform.rotation);
 		spawnBlock.gameObject.tag = "num1";
-		spawnBlock2 = (GameObject)Instantiate (blocks [blockArr2], spawnSpot3, transform.rotation);
+		spawnBlock2 = (GameObject)Instantiate (blocks2 [blockArr2], spawnSpot3, transform.rotation);
 		spawnBlock2.gameObject.tag = "num2";
-		spawnBlock3 = (GameObject)Instantiate (blocks [blockArr3], spawnSpot5, transform.rotation);
+		spawnBlock3 = (GameObject)Instantiate (blocks2 [blockArr3], spawnSpot5, transform.rotation);
 		spawnBlock3.gameObject.tag = "num3";
-		spawnBlock4 = (GameObject)Instantiate (blocks [blockArr4], spawnSpot7, transform.rotation);
+		spawnBlock4 = (GameObject)Instantiate (blocks2 [blockArr4], spawnSpot7, transform.rotation);
 		spawnBlock4.gameObject.tag = "num4";
-		spawnBlock5 = (GameObject)Instantiate (blocks [blockArr5], spawnSpot9, transform.rotation);
+		spawnBlock5 = (GameObject)Instantiate (blocks2 [blockArr5], spawnSpot9, transform.rotation);
 		spawnBlock5.gameObject.tag = "num5";
-		spawnBlock6 = (GameObject)Instantiate (blocks [blockArr6], spawnSpot11, transform.rotation);
+		spawnBlock6 = (GameObject)Instantiate (blocks2 [blockArr6], spawnSpot11, transform.rotation);
 		spawnBlock6.gameObject.tag = "num6";
-		spawnBlock7 = (GameObject)Instantiate (blocks [blockArr7], spawnSpot13, transform.rotation);
+		spawnBlock7 = (GameObject)Instantiate (blocks2 [blockArr7], spawnSpot13, transform.rotation);
 		spawnBlock7.gameObject.tag = "num7";
-		spawnBlock8 = (GameObject)Instantiate (blocks [blockArr8], spawnSpot15, transform.rotation);
+		spawnBlock8 = (GameObject)Instantiate (blocks2 [blockArr8], spawnSpot15, transform.rotation);
 		spawnBlock8.gameObject.tag = "num8";
 
 		Instantiate (oprator [oprArr1], spawnSpot2, transform.rotation);
