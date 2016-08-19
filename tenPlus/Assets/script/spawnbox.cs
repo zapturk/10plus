@@ -35,7 +35,7 @@ public class spawnbox : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (plus && !minus && !multi && !divid) {// addtion only
+		if (plus && !minus && !multi && !divid) {// addtion only done
 			for (int y = 0; y < 4; y++) {
 				if (y == 0) {
 					plusP (ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
@@ -173,35 +173,47 @@ public class spawnbox : MonoBehaviour {
                 }
             }
         }
-        else if (!plus && !minus && multi && !divid && !test)
-        {
-            for (int y = 0; y < 4; y++)
-            {
-                if (y == 0)
-                {
+        else if (!plus && !minus && multi && !divid && !test){ // multiplaction only
+            for (int y = 0; y < 4; y++){
+                if (y == 0){
                     multM(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
                 }
-                else if (y == 1)
-                {
+                else if (y == 1){
                     multM(ref ran3, ref ran4, ref ran5, ref oprArr3, ref oprArr4, ref y);
                 }
-                else if (y == 2)
-                {
+                else if (y == 2){
                     ran8 = ran2;
                     ran7 = ran3;
                     oprArr7 = 2;
                     oprArr8 = 2;
                 }
-                else if (y == 3)
-                {
+                else if (y == 3){
                     multM(ref ran7, ref ran6, ref ran5, ref oprArr6, ref oprArr5, ref y);
                 }
             }
         }
-        else if (!plus && !minus && !multi && !divid && test)
-        {
-            for (int y = 0; y < 4; y++)
-            {
+        else if (plus && !minus && !multi && divid && !test) { // addtion and divide
+            for(int y = 0; y < 4; y++){
+                temp = Random.Range(0, 3);
+                if(y == 0){
+                    if (temp == 0)
+                        plusP(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                    else if (temp == 1)
+                        plusD(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                    else if (temp == 2)
+                        diviP(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                }
+                else if(y == 1){
+                    if(ran3 == 9){
+                        temp = Random.Range(1, 3);
+                    }
+
+                }
+
+            }
+        }
+        else if (!plus && !minus && !multi && !divid && test){
+            for (int y = 0; y < 4; y++){
                 if (y == 0){
                     diviP(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
                 }
