@@ -173,6 +173,134 @@ public class spawnbox : MonoBehaviour {
                 }
             }
         }
+        else if (plus && !minus && !multi && divid && !test) { // addtion and divide
+            for(int y = 0; y < 4; y++){
+                temp = Random.Range(0, 3);
+                if(y == 0){
+                    if (temp == 0)
+                        plusP(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                    else if (temp == 1)
+                        plusD(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                    else if (temp == 2)
+                        diviP(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                }
+                else if(y == 1){
+                    if(ran3 == 9){
+                        temp = Random.Range(1, 3);
+                    }
+                    else{
+                        temp = Random.Range(0, 3);
+                    }
+                    if (temp == 0)
+                        plusP(ref ran3, ref ran4, ref ran5, ref oprArr3, ref oprArr4, ref y);
+                    else if (temp == 1)
+                        plusD(ref ran3, ref ran4, ref ran5, ref oprArr3, ref oprArr4, ref y);
+                    else if (temp == 2)
+                        diviP(ref ran3, ref ran4, ref ran5, ref oprArr3, ref oprArr4, ref y);
+                }
+                else if(y == 2){
+                    if (ran1 == 9){
+                        temp = Random.Range(1, 3);
+                    }
+                    else{
+                        temp = Random.Range(0, 3);
+                    }
+                    if (temp == 0)
+                        plusP(ref ran1, ref ran8, ref ran7, ref oprArr8, ref oprArr7, ref y);
+                    else if (temp == 1)
+                        plusD(ref ran1, ref ran8, ref ran7, ref oprArr8, ref oprArr7, ref y);
+                    else if (temp == 2)
+                        diviP(ref ran1, ref ran8, ref ran7, ref oprArr8, ref oprArr7, ref y);
+                }
+                else if (y == 3){
+                    if (ran7 == 9){
+                        temp = Random.Range(1, 3);
+                    }
+                    else{
+                        temp = Random.Range(0, 3);
+                    }
+                    if (temp == 0)
+                        plusP(ref ran7, ref ran6, ref ran5, ref oprArr6, ref oprArr5, ref y);
+                    else if (temp == 1)
+                        plusD(ref ran7, ref ran6, ref ran5, ref oprArr6, ref oprArr5, ref y);
+                    else if (temp == 2)
+                        diviP(ref ran7, ref ran6, ref ran5, ref oprArr6, ref oprArr5, ref y);
+                }
+            }
+        }
+        else if (!plus && minus && multi && !divid && !test){ // addtion and divide
+            for (int y = 0; y < 4; y++){
+                temp = Random.Range(0, 3);
+                if (y == 0){
+                    if (temp == 0)
+                        multM(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                    else if (temp == 1)
+                        multS(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                    else if (temp == 2)
+                        subM(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                }
+                else if (y == 1){
+                    if (ran3 == 1){
+                        temp = 0;
+                    }
+                    else if (ran3 == 2){
+                        temp = Random.Range(0, 2);
+                    }
+                    else if (ran3 == 3 || ran3 == 4){
+                        temp = Random.Range(1, 3);
+                    }
+                    else{
+                        temp = Random.Range(0, 3);
+                    }
+                    if (temp == 0)
+                        multM(ref ran3, ref ran4, ref ran5, ref oprArr3, ref oprArr4, ref y);
+                    else if (temp == 1)
+                        multS(ref ran3, ref ran4, ref ran5, ref oprArr3, ref oprArr4, ref y);
+                    else if (temp == 2)
+                        subM(ref ran3, ref ran4, ref ran5, ref oprArr3, ref oprArr4, ref y);
+                }
+                else if (y == 2){
+                    if (ran1 == 1){
+                        temp = 0;
+                    }
+                    else if (ran1 == 2){
+                        temp = Random.Range(0, 2);
+                    }
+                    else if (ran1 == 3 || ran1 == 4){
+                        temp = Random.Range(1, 3);
+                    }
+                    else{
+                        temp = Random.Range(0, 3);
+                    }
+                    if (temp == 0)
+                        multM(ref ran1, ref ran8, ref ran7, ref oprArr8, ref oprArr7, ref y);
+                    else if (temp == 1)
+                        multS(ref ran1, ref ran8, ref ran7, ref oprArr8, ref oprArr7, ref y);
+                    else if (temp == 2)
+                        subM(ref ran1, ref ran8, ref ran7, ref oprArr8, ref oprArr7, ref y);
+                }
+                else if (y == 3){
+                    if (ran7 == 1){
+                        temp = 0;
+                    }
+                    else if (ran7 == 2){
+                        temp = Random.Range(0, 2);
+                    }
+                    else if (ran7 == 3 || ran7 == 4){
+                        temp = Random.Range(1, 3);
+                    }
+                    else{
+                        temp = Random.Range(0, 3);
+                    }
+                    if (temp == 0)
+                        multM(ref ran7, ref ran6, ref ran5, ref oprArr6, ref oprArr5, ref y);
+                    else if (temp == 1)
+                        multS(ref ran7, ref ran6, ref ran5, ref oprArr6, ref oprArr5, ref y);
+                    else if (temp == 2)
+                        subM(ref ran7, ref ran6, ref ran5, ref oprArr6, ref oprArr5, ref y);
+                }
+            }
+        }
         else if (!plus && !minus && multi && !divid && !test){ // multiplaction only
             for (int y = 0; y < 4; y++){
                 if (y == 0){
@@ -192,39 +320,83 @@ public class spawnbox : MonoBehaviour {
                 }
             }
         }
-        else if (plus && !minus && !multi && divid && !test) { // addtion and divide
+        else if(!plus && !minus && multi && divid && !test){
             for(int y = 0; y < 4; y++){
                 temp = Random.Range(0, 3);
-                if(y == 0){
+                if (y == 0){
                     if (temp == 0)
-                        plusP(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                        multM(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
                     else if (temp == 1)
-                        plusD(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                        multD(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
                     else if (temp == 2)
-                        diviP(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                        diviM(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
                 }
-                else if(y == 1){
-                    if(ran3 == 9){
+                else if (y == 1){
+                    if (ran3 == 1){
+                        temp = 0;
+                    }
+                    else if(ran3 == 4 || ran3 == 6 || ran3 == 8){
                         temp = Random.Range(1, 3);
                     }
-
+                    else{
+                        temp = Random.Range(0, 3);
+                    }
+                    if (temp == 0)
+                        multM(ref ran3, ref ran4, ref ran5, ref oprArr3, ref oprArr4, ref y);
+                    else if (temp == 1)
+                        multD(ref ran3, ref ran4, ref ran5, ref oprArr3, ref oprArr4, ref y);
+                    else if (temp == 2)
+                        diviM(ref ran3, ref ran4, ref ran5, ref oprArr3, ref oprArr4, ref y);
                 }
-
+                else if (y == 2){
+                    if (ran1 == 1){
+                        temp = 0;
+                    }
+                    else if (ran1 == 4 || ran1 == 6 || ran1 == 8){
+                        temp = Random.Range(1, 3);
+                    }
+                    else{
+                        temp = Random.Range(0, 3);
+                    }
+                    if (temp == 0)
+                        multM(ref ran1, ref ran8, ref ran7, ref oprArr8, ref oprArr7, ref y);
+                    else if (temp == 1)
+                        multD(ref ran1, ref ran8, ref ran7, ref oprArr8, ref oprArr7, ref y);
+                    else if (temp == 2)
+                        diviM(ref ran1, ref ran8, ref ran7, ref oprArr8, ref oprArr7, ref y);
+                }
+                else if (y == 3){
+                    if (ran7 == 1){
+                        temp = 0;
+                    }
+                    else if (ran7 == 4 || ran7 == 6 || ran7 == 8){
+                        temp = Random.Range(1, 3);
+                    }
+                    else{
+                        temp = Random.Range(0, 3);
+                    }
+                    if (temp == 0)
+                        multM(ref ran7, ref ran6, ref ran5, ref oprArr6, ref oprArr5, ref y);
+                    else if (temp == 1)
+                        multD(ref ran7, ref ran6, ref ran5, ref oprArr6, ref oprArr5, ref y);
+                    else if (temp == 2)
+                        diviM(ref ran7, ref ran6, ref ran5, ref oprArr6, ref oprArr5, ref y);
+                }
             }
         }
         else if (!plus && !minus && !multi && !divid && test){
             for (int y = 0; y < 4; y++){
                 if (y == 0){
-                    diviP(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                    multS(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
                 }
                 else if (y == 1){
-                    diviP(ref ran3, ref ran4, ref ran5, ref oprArr3, ref oprArr4, ref y);
+                    multS(ref ran3, ref ran4, ref ran5, ref oprArr3, ref oprArr4, ref y);
                 }
                 else if (y == 2){
-                    diviP(ref ran1, ref ran8, ref ran7, ref oprArr8, ref oprArr7, ref y);
+                    multS(ref ran1, ref ran8, ref ran7, ref oprArr8, ref oprArr7, ref y);
                 }
                 else if (y == 3){
-                    diviP(ref ran7, ref ran6, ref ran5, ref oprArr6, ref oprArr5, ref y);
+                    multS(ref ran7, ref ran6, ref ran5, ref oprArr6, ref oprArr5, ref y);
                 }
             }
         }
@@ -699,7 +871,7 @@ public class spawnbox : MonoBehaviour {
 					if(Val3 == 2)
 						Val2 = 3;
 					else if(Val3 == 6)
-						Val2 = 3;
+						Val2 = 4;
                     else
                         x = x - 3;
                 }
@@ -859,7 +1031,6 @@ public class spawnbox : MonoBehaviour {
            if(Val1 == 2 || Val1 == 4 || Val1 == 6 || Val1 == 8){
                Val2 = 5;
                Val3 = Val1 / 2;
-
            }
            else if(Val1 == 5){
                temp = Random.Range(1,5);
