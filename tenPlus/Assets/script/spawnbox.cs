@@ -8,17 +8,19 @@ public class spawnbox : MonoBehaviour {
 	public GameObject[] blocks;
     public GameObject[] blocks2;
 	public GameObject[] oprator;
-	public bool plus, minus, multi, divid, test;
-	private GameObject spawnBlock, spawnBlock2, spawnBlock3, spawnBlock4, spawnBlock5, spawnBlock6, spawnBlock7, spawnBlock8;
+    public GameObject[] opratorSelected;
+    public GameObject menuBackGround;
+    public bool plus, minus, multi, divid, test;
+	private GameObject spawnBlock, spawnBlock2, spawnBlock3, spawnBlock4, spawnBlock5, spawnBlock6, spawnBlock7, spawnBlock8, menu, menuPlus, menuSub, menuMult, menuDivide;
 	private Vector2 spawnSpot1 = new Vector2(-5.4f,5.4f);
 	private Vector2 spawnSpot2 = new Vector2(-2.7f,5.4f);
 	private Vector2 spawnSpot3 = new Vector2(0,5.4f);
 	private Vector2 spawnSpot4 = new Vector2(2.7f,5.4f);
-	private Vector2 spawnSpot5 = new Vector2(5.4f,5.4f);
+	private Vector2 spawnSpot5 = new Vector2(5.38f,5.4f);
 	private Vector2 spawnSpot6 = new Vector2(5.4f,2.7f);
-	private Vector2 spawnSpot7 = new Vector2(5.4f,0);
+	private Vector2 spawnSpot7 = new Vector2(5.38f,0);
 	private Vector2 spawnSpot8 = new Vector2(5.4f,-2.7f);
-	private Vector2 spawnSpot9 = new Vector2(5.4f,-5.4f);
+	private Vector2 spawnSpot9 = new Vector2(5.38f,-5.4f);
 	private Vector2 spawnSpot10 = new Vector2(2.7f,-5.4f);
 	private Vector2 spawnSpot11 = new Vector2(0,-5.4f);
 	private Vector2 spawnSpot12 = new Vector2(-2.7f,-5.4f);
@@ -30,11 +32,31 @@ public class spawnbox : MonoBehaviour {
 	private int oprArr1, oprArr2, oprArr3, oprArr4, oprArr5, oprArr6, oprArr7, oprArr8;
 	private bool[] clickable;
 	private bool[] win;
+    private bool genStart;
 	private int ran1, ran2, ran3, ran4, ran5, ran6, ran7, ran8, removeNum;
 	private int temp;
 
+    void Start()
+    {
+        genStart = false;
+        menu = Instantiate(menuBackGround);
+        menuPlus = Instantiate(oprator[0]);
+        menuPlus.tag = "plus";
+
+        menuSub = Instantiate(oprator[1]);
+        menuSub.tag = "subtract";
+
+        menuMult = Instantiate(oprator[2]);
+        menuMult.tag = "multiply";
+
+        menuDivide = Instantiate(oprator[3]);
+        menuDivide.tag = "divide";
+
+    }
+
 	// Use this for initialization
-	void Start () {
+	void StartSpawn () {
+
 		if (plus && !minus && !multi && !divid) {// addtion only done
 			for (int y = 0; y < 4; y++) {
 				if (y == 0) {
@@ -48,7 +70,7 @@ public class spawnbox : MonoBehaviour {
 				}
 			}
 		}
-		else if (plus && minus && !multi && !divid) {// addtion and subtraction
+		else if (plus && minus && !multi && !divid) {// addtion and subtraction done
 			for (int y = 0; y < 4; y++) {
 				if (y == 0) {
 					temp = Random.Range(0, 3);
@@ -107,7 +129,7 @@ public class spawnbox : MonoBehaviour {
 				}
 			}
 		}
-		else if(plus && !minus && multi && !divid){// addtion and multiplaction
+		else if(plus && !minus && multi && !divid){// addtion and multiplaction done
             for (int y = 0; y < 4; y++){
                 temp = Random.Range(0, 4);
                 if (y == 0){
@@ -173,7 +195,7 @@ public class spawnbox : MonoBehaviour {
                 }
             }
         }
-        else if (plus && !minus && !multi && divid && !test) { // addtion and divide
+        else if (plus && !minus && !multi && divid && !test) { // addtion and divide done
             for(int y = 0; y < 4; y++){
                 temp = Random.Range(0, 3);
                 if(y == 0){
@@ -228,7 +250,7 @@ public class spawnbox : MonoBehaviour {
                 }
             }
         }
-        else if (!plus && minus && multi && !divid && !test){ // addtion and divide
+        else if (!plus && minus && multi && !divid && !test){ // minus and multiply done
             for (int y = 0; y < 4; y++){
                 temp = Random.Range(0, 3);
                 if (y == 0){
@@ -301,7 +323,7 @@ public class spawnbox : MonoBehaviour {
                 }
             }
         }
-        else if (!plus && !minus && multi && !divid && !test){ // multiplaction only
+        else if (!plus && !minus && multi && !divid && !test){ // multiplaction only done
             for (int y = 0; y < 4; y++){
                 if (y == 0){
                     multM(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
@@ -320,7 +342,7 @@ public class spawnbox : MonoBehaviour {
                 }
             }
         }
-        else if(!plus && !minus && multi && divid && !test){
+        else if(!plus && !minus && multi && divid && !test){ // multiplaction and devide done
             for(int y = 0; y < 4; y++){
                 temp = Random.Range(0, 3);
                 if (y == 0){
@@ -384,10 +406,27 @@ public class spawnbox : MonoBehaviour {
                 }
             }
         }
-        else if (!plus && !minus && !multi && !divid && test){
+        else if (!plus && !minus && !multi && !divid && test){ // need to test plus minus and multi
             for (int y = 0; y < 4; y++){
-                if (y == 0){
-                    multS(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                temp = Random.Range(0, 8);
+                if (y == 0)
+                {
+                    if (temp == 0)
+                        plusP(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                    else if (temp == 1)
+                        plusS(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                    else if (temp == 2)
+                        plusM(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                    else if (temp == 3)
+                        subP(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                    else if (temp == 4)
+                        subM(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                    else if (temp == 5)
+                        multM(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                    else if (temp == 6)
+                        multP(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
+                    else if (temp == 7)
+                        multS(ref ran1, ref ran2, ref ran3, ref oprArr1, ref oprArr2, ref y);
                 }
                 else if (y == 1){
                     multS(ref ran3, ref ran4, ref ran5, ref oprArr3, ref oprArr4, ref y);
@@ -406,7 +445,7 @@ public class spawnbox : MonoBehaviour {
 		win = new bool[8]; 
 		removeNums ();
 
-        // log all the values to you konow what they ar
+        // log all the values to you konow what they are
 		Debug.Log (ran1);
 		Debug.Log (ran2);
 		Debug.Log (ran3);
@@ -480,10 +519,78 @@ public class spawnbox : MonoBehaviour {
                         Debug.Log("<-------Reset------->");
                         SceneManager.LoadScene("Box");
                     }
-                if (hitInfo.transform.gameObject.tag == "reset")
+                    if (hitInfo.transform.gameObject.tag == "reset")
+                    {
+                        Debug.Log("<-------logo------->");
+                        SceneManager.LoadScene("logo");
+
+                    }
+
+                    if (hitInfo.transform.gameObject.tag == "menu")
+                    {
+                        Debug.Log("<-------menu------->");
+                        StartSpawn();
+                        Destroy(menu);
+                        Destroy(menuPlus);
+                        Destroy(menuSub);
+                        Destroy(menuMult);
+                        Destroy(menuDivide);
+                        genStart = true;
+                    }
+                if (hitInfo.transform.gameObject.tag == "plus")
                 {
-                    Debug.Log("<-------logo------->");
-                    SceneManager.LoadScene("logo");
+                    Destroy(menuPlus);
+                    menuPlus = Instantiate(opratorSelected[0]);
+                    plus = true;
+                }
+                else if (hitInfo.transform.gameObject.tag == "plusSelected")
+                {
+                    Destroy(menuPlus);
+                    menuPlus = Instantiate(oprator[0]);
+                    menuPlus.gameObject.tag = "plus";
+                    plus = false;
+                }
+
+                if (hitInfo.transform.gameObject.tag == "subtract")
+                {
+                    Destroy(menuSub);
+                    menuSub = Instantiate(opratorSelected[1]);
+                    minus = true;
+                }
+                else if (hitInfo.transform.gameObject.tag == "subSelected")
+                {
+                    Destroy(menuSub);
+                    menuSub = Instantiate(oprator[1]);
+                    menuSub.gameObject.tag = "subtract";
+                    minus = false;
+                }
+
+                if (hitInfo.transform.gameObject.tag == "multiply")
+                {
+                    Destroy(menuMult);
+                    menuMult = Instantiate(opratorSelected[2]);
+                    multi = true;
+                }
+                else if (hitInfo.transform.gameObject.tag == "mulSelected")
+                {
+                    Destroy(menuMult);
+                    menuMult = Instantiate(oprator[2]);
+                    menuMult.gameObject.tag = "multiply";
+                    multi = false;
+                }
+
+                if (hitInfo.transform.gameObject.tag == "divide")
+                {
+                    Destroy(menuDivide);
+                    menuDivide = Instantiate(opratorSelected[3]);
+                    divid = true;
+                }
+                else if (hitInfo.transform.gameObject.tag == "divideSelected")
+                {
+                    Destroy(menuDivide);
+                    menuDivide = Instantiate(oprator[3]);
+                    menuDivide.gameObject.tag = "divide";
+                    divid = false;
                 }
 
                 if (hitInfo.transform.gameObject.tag == "num1" && clickable[0])
@@ -627,7 +734,7 @@ public class spawnbox : MonoBehaviour {
                     // Here you can check hitInfo to see which collider has been hit, and act appropriately.
                 }
             }
-
+        if (genStart) { 
             if (win[0] && win[1] && win[2] && win[3] && win[4] && win[5] && win[6] && win[7])
             {
                 Debug.Log("<---------Winner---------->");
@@ -638,6 +745,7 @@ public class spawnbox : MonoBehaviour {
                 }
             }
         }
+    }
     //}
 
 	public void plusP(ref int Val1, ref int Val2, ref int Val3, ref int oper1, ref int oper2, ref int x){//done
